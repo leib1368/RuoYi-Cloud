@@ -2,6 +2,7 @@ package com.ruoyi.job.controller;
 
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
+import com.ruoyi.common.security.annotation.Logical;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -43,7 +44,7 @@ public class SysJobController extends BaseController
     /**
      * 查询定时任务列表
      */
-    @RequiresPermissions("monitor:job:list")
+    @RequiresPermissions(value = {"monitor:job:export","monitor:job:export"},logical = Logical.AND)
     @GetMapping("/list")
     public TableDataInfo list(SysJob sysJob)
     {
