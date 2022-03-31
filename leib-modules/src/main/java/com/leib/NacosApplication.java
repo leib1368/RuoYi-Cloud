@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+@EnableCustomSwagger2
 @SpringBootApplication
 @EnableDiscoveryClient  //服务发现
 public class NacosApplication {
